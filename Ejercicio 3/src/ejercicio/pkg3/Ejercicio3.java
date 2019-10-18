@@ -13,7 +13,7 @@ public class Ejercicio3 {
         num1 = entrada.nextInt();
         num2 = entrada.nextInt();
         
-        cociente = (double)num1/num2;
+        cociente = num1/num2;
         
         System.out.println("El cociente es: " + cociente);
         
