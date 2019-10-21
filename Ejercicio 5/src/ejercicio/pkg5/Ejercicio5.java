@@ -1,21 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ejercicio.pkg5;
 
-/**
- *
- * @author fedec
- */
+import java.util.Scanner;
+
 public class Ejercicio5 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        final double PI = Math.PI;
+        int radio;
+        double perimetro,superficie,piDoble;
+        
+        System.out.println("Ingrese radio de un circulo: ");
+        Scanner entrada = new Scanner(System.in);
+        radio = entrada.nextInt();
+        
+        piDoble = 2 * PI;
+        superficie = (double) (radio * radio * PI);
+        perimetro = (double) (radio * piDoble) ;
+        
+        System.out.println("El perimetro es: " + perimetro);
+        System.out.println("La superficie es: " + superficie);
+        
     }
     
 }
