@@ -4,14 +4,24 @@ public class Ejercicio16 {
 
     public static void main(String[] args) {
         
-        int num;
+        int num,opcion;
         
+        opcion = opciones();
         num = numero();
-       // siguientesFor(num);
-        //siguientesWhile(num);
-        siguientesDoWhile(num);
+        segun(opcion,num);
+       
     }
-    
+    static int opciones(){
+        
+        System.out.println("Ingrese 1 para opcion For: ");
+        System.out.println("Ingrese 2 para opcion While: ");
+        System.out.println("Ingrese 3 para opcion Do While: ");
+        Scanner ingreso = new Scanner(System.in);
+        int x = ingreso.nextInt();
+        
+        return x;
+        
+    }
     static int numero(){
         
         int s;
@@ -21,6 +31,28 @@ public class Ejercicio16 {
         s = teclado.nextInt();
         
         return s;
+        
+    }
+    static void segun(int s, int n){
+        
+        switch(s){
+        
+            case 1: 
+                System.out.println("Funcion For!");
+                siguientesFor(n);
+                break;
+            case 2:
+                System.out.println("Funcion While!");
+                siguientesWhile(n);
+                break;
+            case 3:
+                System.out.println("Funcion Do While!");
+                siguientesDoWhile(n);
+                break;
+            default:
+                System.out.println("La opcion ingresada es incorrecta!");
+                break;
+    }
         
     }
     static void siguientesFor(int x){
@@ -37,6 +69,7 @@ public class Ejercicio16 {
             
             
         }  
+       
         
     }
     
@@ -65,7 +98,7 @@ public class Ejercicio16 {
             i++;
             System.out.println(i);
 
-        }while(r == i);
+        }while(r >= i);
             
         
     }
