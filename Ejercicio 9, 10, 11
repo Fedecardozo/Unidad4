@@ -1,0 +1,178 @@
+package ejercicio.pkg9;
+
+import java.util.Scanner;
+
+public class Ejercicio9 {
+
+    public static void main(String[] args) {
+        
+        int alumnos,sillas,disponible;
+        String mensaje;
+        
+        System.out.println("Ingrese cantidad de alumnos: ");
+        Scanner entrada = new Scanner(System.in);
+        alumnos = entrada.nextInt();
+        System.out.println("Ingrese cantidad de sillas: ");
+        Scanner teclado = new Scanner(System.in);
+        sillas = teclado.nextInt();
+        
+        disponible = sillas - alumnos;
+        
+        if(disponible>0){
+            
+            mensaje = "Si, alcanzan las sillas!! ";
+            
+        }else {
+            
+            mensaje = "Faltan " + disponible * -1 + " sillas";
+            
+        }
+        
+        System.out.println(mensaje);
+        
+    }
+    
+}
+
+package ejercicio.pkg10;
+
+import java.util.Scanner;
+
+public class Ejercicio10 {
+
+    public static void main(String[] args) {
+        
+        int num1,num2;
+        String msj,msj2;
+        
+        msj = "Ingrese numero entre 0 y 100: ";
+        msj2 = "Ingrese siguiente numero entre 0 y 100: ";
+        
+        num1 = entre0y100(msj);
+        num2 = entre0y100(msj2);
+        divisible(num1,num2);
+        
+    }
+    
+    static int entre0y100(String c){
+        
+        int x;
+        
+        System.out.println(c);
+        Scanner entrada = new Scanner(System.in);
+        x = entrada.nextInt();
+        
+        while(x<0 || x>100){
+            
+            System.out.println("Error, ingrese numero entre 0 y 100");
+            x = entrada.nextInt();
+            
+            
+        }
+        return x;
+        
+    }
+    
+    static void divisible(int x, int y){
+        
+        String s;
+        
+        if(x>y){
+            
+            s = x + " es divisible por " + y + ". ";
+            
+        }else {
+            
+            s = y + " es disivible por " + x + ". ";
+            
+        }
+        
+        System.out.println(s);
+        
+        
+    }
+    
+}
+
+package ejercicio.pkg11;
+
+import java.util.Scanner;
+
+public class Ejercicio11 {
+
+    public static void main(String[] args) {
+        
+        int lado1,lado2,lado3;
+        boolean bandera;
+        
+        System.out.println("Ingrese lado 'A' del triangulo: ");
+        Scanner entrada = new Scanner(System.in);
+        lado1 = entrada.nextInt();
+        System.out.println("Ingrese lado 'B' del triangulo: ");
+        lado2 = entrada.nextInt();
+        System.out.println("Ingrese lado 'C' del triangulo: ");
+        lado3 = entrada.nextInt();
+        
+        bandera = lados(lado1,lado2,lado3);
+        triangulos(bandera,lado1,lado2,lado3);
+        
+    }
+    
+    static boolean lados(int a, int b, int c){
+        
+        int s,r,z,m;
+        boolean n;
+        m = 0;
+        
+        s = a + b;
+        r = a + c;
+        z = b + c;
+        
+        if(s > c){
+            
+            m++; 
+        }
+        if(r>b){
+            
+            m++; 
+        }
+        if(z > c){
+            
+            m++;   
+        }
+        if(m==3){
+            
+            System.out.println("Triangulo valido");
+            n = true;
+            
+        }else {
+            
+            System.out.println("Triangulo invalido");
+            n = false;
+        }
+        
+        return n;
+    }
+    
+    static void triangulos(boolean x,int a, int b, int c){
+        
+        if(x==true){
+            
+            if(a==b && b==c){
+                
+                System.out.println("Es un triangulo equilatero!");
+                
+            }else if(a==b || b==c){
+                
+                System.out.println("Es un triangulo isoseles!");
+            }else{
+                
+                System.out.println("Es un triangulo escaleno!");
+                
+            }
+            
+        }
+        
+    }
+}
+
